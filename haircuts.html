@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages - My Barber Business</title>
+    <link rel="stylesheet" href="phill.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="top-banner">Book Your Fresh Look Today!</div>
+        <nav>
+            <div class="logo">✂ MyBarber</div>
+            <ul>
+                <li><a href="search.html">Home</a></li>
+                <li><a href="haircuts.html">Haircuts</a></li>
+                <li><a href="haircoloring.html">Hair Coloring</a></li>
+                <li><a href="package.html" class="active">Packages</a></li>
+                <li><a href="Aboutus.html">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+            <button class="book-btn">Book Now</button>
+        </nav>
+    </header>
+
+    <!-- Haircut Carousel -->
+    <section class="hair-coloring">
+        <h2>Exclusive Haircut</h2>
+        <div class="carousel-container">
+            <button class="carousel-btn prev">&#10094;</button>
+            <div class="carousel-track">
+                <div class="package-card">
+                    <img src="/image/WhatsApp Image 2025-08-23 at 11.56.12 PM.jpeg" alt="Low/high/mid fade">
+                    <h3>Low/high/mid fade</h3>
+                    <p class="price">R90</p>
+                    <a href="Booking.html" class="book-btn">Book Now</a>
+                </div>
+                <div class="package-card">
+                    <img src="/image/Phillip 4.jpeg" alt="Long Haircut and Black Dye">
+                    <h3>Long Haircut + Black Dye</h3>
+                    <p class="price">R150</p>
+                    <a href="Booking.html" class="book-btn">Book Now</a>
+                </div>
+                <div class="package-card">
+                    <img src="/image/WhatsApp Image 2025-08-23 at 8.51.24 PM.jpeg" alt="Taperfade and Black Dye">
+                    <h3>Taperfade + Black Dye</h3>
+                    <p class="price">R150</p>
+                    <a href="Booking.html" class="book-btn">Book Now</a>
+                </div>
+                <div class="package-card">
+                    <img src="image/Phillip 3.jpeg" alt="short haircut and dye">
+                    <h3>short haircut and dye</h3>
+                    <p class="price">R140</p>
+                    <a href="Booking.html" class="book-btn">Book Now</a>
+                </div>
+                <div class="package-card">
+                    <img src="/image/mp.jpeg" alt="Any haircut with hair fiber">
+                    <h3>Any haircut with hair fibe</h3>
+                    <p class="price">R100</p>
+                    <a href="Booking.html" class="book-btn">Book Now</a>
+                </div>
+                <div class="package-card">
+                    <img src="/image/WhatsApp Image 2025-08-24 at 12.12.17 AM.jpeg" alt="Haircut with lines">
+                    <h3>Normal Haircut with lines</h3>
+                    <p class="price">R100</p>
+                    <a href="Booking.html" class="book-btn">Book Now</a>
+                </div>
+            </div>
+            <button class="carousel-btn next">&#10095;</button>
+        </div>
+    </section>
+
+    <style>
+    .carousel-container {
+        position: relative;
+        max-width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+        padding: 20px 0;
+    }
+    .carousel-track {
+        display: flex;
+        transition: transform 0.5s cubic-bezier(.77,0,.18,1);
+        will-change: transform;
+    }
+    .package-card {
+        min-width: 300px;
+        max-width: 300px;
+        height: 400px;
+        margin: 0 10px;
+        background: #4a6969;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        text-align: center;
+        padding: 16px;
+        flex-shrink: 0;
+    }
+    .package-card img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    .package-card h3 {
+        margin: 12px 0 6px;
+        font-size: 1.1rem;
+    }
+    .package-card .price {
+        font-weight: bold;
+        color: #263c4e;
+        margin-bottom: 10px;
+    
+    }
+    .package-card .book-btn {
+        display: inline-block;
+        background: #2c4863;
+        color: #fff;
+        padding: 8px 18px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        margin-top: 8px;
+        transition: background 0.2s;
+    }
+    .package-card .book-btn:hover {
+        background: #226c43;
+    }
+    .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(45,143,90,0.8);
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+        font-size: 1.8rem;
+        cursor: pointer;
+        z-index: 2;
+        transition: background 0.2s;
+    }
+    .carousel-btn.prev { left: 8px; }
+    .carousel-btn.next { right: 8px; }
+    .carousel-btn:active { background: #226c43; }
+
+    @media (max-width: 900px) {
+        .package-card { min-width: 220px; max-width: 240px; }
+    }
+    @media (max-width: 600px) {
+        .carousel-container { padding: 10px 0; }
+        .package-card { min-width: 80vw; max-width: 90vw; }
+        .carousel-btn { width: 32px; height: 32px; font-size: 1.3rem; }
+    }
+    </style>
+
+    <script>
+    const track = document.querySelector('.carousel-track');
+    const cards = Array.from(track.children);
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    let cardWidth = cards[0].offsetWidth + 20; // card + margin
+    let visibleCards = Math.floor(document.querySelector('.carousel-container').offsetWidth / cardWidth) || 1;
+    let index = 0;
+    let autoSlideInterval;
+    let isDragging = false, startX = 0, currentTranslate = 0, prevTranslate = 0, animationID = 0;
+
+    // Clone cards for infinite loop
+    function cloneCards() {
+        // Remove previous clones
+        track.querySelectorAll('.clone').forEach(e => e.remove());
+        // Clone first N cards to end, last N cards to start
+        for (let i = 0; i < visibleCards; i++) {
+            let first = cards[i].cloneNode(true);
+            first.classList.add('clone');
+            track.appendChild(first);
+            let last = cards[cards.length - 1 - i].cloneNode(true);
+            last.classList.add('clone');
+            track.insertBefore(last, track.firstChild);
+        }
+    }
+    function updateCardWidth() {
+        cardWidth = cards[0].offsetWidth + 20;
+        visibleCards = Math.floor(document.querySelector('.carousel-container').offsetWidth / cardWidth) || 1;
+    }
+    function setTrackPosition() {
+        track.style.transform = `translateX(${-cardWidth * (index + visibleCards)}px)`;
+    }
+    function nextSlide() {
+        index++;
+        track.style.transition = 'transform 0.5s cubic-bezier(.77,0,.18,1)';
+        setTrackPosition();
+        if (index >= cards.length) {
+            setTimeout(() => {
+                track.style.transition = 'none';
+                index = 0;
+                setTrackPosition();
+            }, 500);
+        }
+    }
+    function prevSlide() {
+        index--;
+        track.style.transition = 'transform 0.5s cubic-bezier(.77,0,.18,1)';
+        setTrackPosition();
+        if (index < 0) {
+            setTimeout(() => {
+                track.style.transition = 'none';
+                index = cards.length - 1;
+                setTrackPosition();
+            }, 500);
+        }
+    }
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(nextSlide, 3500);
+    }
+    function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+    }
+    function handleResize() {
+        updateCardWidth();
+        cloneCards();
+        setTrackPosition();
+    }
+    window.addEventListener('resize', handleResize);
+
+    prevBtn.addEventListener('click', () => {
+        stopAutoSlide();
+        prevSlide();
+        startAutoSlide();
+    });
+    nextBtn.addEventListener('click', () => {
+        stopAutoSlide();
+        nextSlide();
+        startAutoSlide();
+    });
+
+    // Touch/Swipe support
+    track.addEventListener('touchstart', touchStart, {passive: true});
+    track.addEventListener('touchmove', touchMove, {passive: false});
+    track.addEventListener('touchend', touchEnd);
+    track.addEventListener('mousedown', mouseStart);
+    track.addEventListener('mousemove', mouseMove);
+    track.addEventListener('mouseup', mouseEnd);
+    track.addEventListener('mouseleave', mouseEnd);
+
+    function touchStart(e) {
+        isDragging = true;
+        startX = e.touches[0].clientX;
+        prevTranslate = -cardWidth * (index + visibleCards);
+        track.style.transition = 'none';
+    }
+    function touchMove(e) {
+        if (!isDragging) return;
+        let dx = e.touches[0].clientX - startX;
+        currentTranslate = prevTranslate + dx;
+        track.style.transform = `translateX(${currentTranslate}px)`;
+        e.preventDefault();
+    }
+    function touchEnd(e) {
+        if (!isDragging) return;
+        isDragging = false;
+        let dx = (e.changedTouches[0].clientX - startX);
+        if (dx < -50) nextSlide();
+        else if (dx > 50) prevSlide();
+        else setTrackPosition();
+        startAutoSlide();
+    }
+    function mouseStart(e) {
+        isDragging = true;
+        startX = e.clientX;
+        prevTranslate = -cardWidth * (index + visibleCards);
+        track.style.transition = 'none';
+        stopAutoSlide();
+    }
+    function mouseMove(e) {
+        if (!isDragging) return;
+        let dx = e.clientX - startX;
+        currentTranslate = prevTranslate + dx;
+        track.style.transform = `translateX(${currentTranslate}px)`;
+    }
+    function mouseEnd(e) {
+        if (!isDragging) return;
+        isDragging = false;
+        let dx = (e.clientX - startX);
+        if (dx < -50) nextSlide();
+        else if (dx > 50) prevSlide();
+        else setTrackPosition();
+        startAutoSlide();
+    }
+
+    // Init
+    updateCardWidth();
+    cloneCards();
+    setTrackPosition();
+    startAutoSlide();
+    </script>
+    </section>
+  <!-- Footer -->
+  <footer class="footer fade-slide-up delay5">
+    <div class="footer-container">
+      <div class="about">
+        <h3>About Us</h3>
+        <p>PBOSSP Mobile Barber brings professional haircuts right to your doorstep. Whether you’re at home, work, or on the go, we deliver sharp, stylish looks with convenience and care.</p>
+      </div>
+      <div class="contact">
+        <h3>Contact Us</h3>
+        <p>📍 Potchefstroom, South Africa</p>
+        <p>📞 +2772 670 6550</p>
+        <p>📧 mpelogic@email.com</p>
+      </div>
+    </div>
+    <p class="footer-bottom">© 2025 PBOSSP Mobile Barber. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

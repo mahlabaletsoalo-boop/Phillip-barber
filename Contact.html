@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Section</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background: #0d767e;
+}
+.contact-section {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 2rem;
+padding: 3rem;
+background: rgba(255, 255, 255, 0.87);
+max-width: 1100px;
+margin: 3rem auto;
+border-radius: 20px;
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+animation: fadeIn 1s ease-in;
+}
+@keyframes fadeIn {
+from {opacity: 0; transform: translateY(30px);}
+to {opacity: 1; transform: translateY(0);}
+}
+.contact-info h2 {
+font-size: 2rem;
+margin-bottom: 1rem;
+color: #333;
+}
+.contact-info p {
+font-size: 1rem;
+color: #555;
+margin-bottom: 0.8rem;
+}
+.contact-info i {
+color: #4A90E2;
+margin-right: 0.5rem;
+}
+.contact-form h3 {
+font-size: 1.5rem;
+margin-bottom: 1rem;
+color: #333;
+}
+.contact-form form {
+display: flex;
+flex-direction: column;
+}
+.contact-form input, .contact-form textarea {
+margin-bottom: 1rem;
+padding: 0.8rem;
+border: 1px solid #ddd;
+border-radius: 8px;
+font-size: 1rem;
+}
+.contact-form button {
+background: #4A90E2;
+color: white;
+border: none;
+padding: 0.8rem;
+border-radius: 8px;
+cursor: pointer;
+transition: 0.3s;
+}
+.contact-form button:hover {
+background: #357ABD;
+}
+@media(max-width: 768px) {
+.contact-section {
+grid-template-columns: 1fr;
+}
+}
+</style>
+</head>
+<body>
+<header>
+    <nav>
+        <!-- Navigation menu can go here if needed -->
+    </nav>
+</header>
+<main>
+<section class="contact-section">
+<div class="contact-info">
+<h2>Contact Us</h2>
+<p><i class="fas fa-phone"></i> +2772 670 6550</p>
+<p><i class="fas fa-envelope"></i> mpelogic@gmail.com</p>
+<p><i class="fas fa-map-marker-alt"></i> 95 Hoffman, Potchefstroom, South Africa</p>
+<p>We’d love to hear from you. Get in touch with any inquiries or feedback.</p>
+</div>
+
+
+<div class="contact-form">
+<h3>Send us a message</h3>
+<form>
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea rows="5" placeholder="Your Message" required></textarea>
+<button type="submit">Send Message</button>
+</form>
+</div>
+</section>
+</body>
+</html>
